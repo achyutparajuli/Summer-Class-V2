@@ -28,8 +28,16 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->age }}</td>
                 <td>
-                    <a href="{{ route('admin.users.edit', $user->id) }}"><i class="bi bi-pencil"></i></a>
-                    <i class="bi bi-trash"></i>
+                    <a href="{{ route('admin.users.edit', $user->id) }}">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <form action="{{ route('admin.users.delete', $user->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" style="border: none; background: none; cursor: pointer;" onclick="return confirm('Are you sure you want to delete this user?')">
+                            <i class="bi bi-trash text-danger"></i>
+                        </button>
+                    </form>
                 </td>
             </tr>
             @endforeach
