@@ -49,7 +49,9 @@
 
         <div class="message">
             <p>Dear {{ $mailData['name'] }},</p>
-            <p>Thank you for providing your details Your Company Name.
+            <p>Thank you for registration.
+
+            <h1>{{ $mailData['test'] }}</h1>
         </div>
 
     </div>

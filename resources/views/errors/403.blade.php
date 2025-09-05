@@ -14,7 +14,6 @@
 </head>
 
 <body class="bg-body-tertiary">
-
     <main class="min-vh-100 d-flex align-items-center">
         <div class="container">
             <div class="row justify-content-center">
@@ -29,8 +28,7 @@
                             </p>
 
                             <div class="d-flex gap-2 justify-content-center mt-3">
-                                <a href="/" class="btn btn-primary">Go Home</a>
-                                <button type="button" class="btn btn-outline-secondary" onclick="history.back()">Go Back</button>
+                                <a href="{{ route('admin.login.index') }}" class="btn btn-primary">Login</a>
                             </div>
 
                             <hr class="my-4" />

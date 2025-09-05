@@ -15,6 +15,9 @@ class LoginController extends Controller
 {
     public function index()
     {
+        if (Auth::check()) {
+            return redirect()->route('admin.dashboard.index');
+        }
         return view('admin.login.index');
     }
 
@@ -58,6 +61,12 @@ class LoginController extends Controller
         } else {
             toastr()->error('Invalid Token.');
         }
+        return redirect()->route('admin.login.index');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
         return redirect()->route('admin.login.index');
     }
 }

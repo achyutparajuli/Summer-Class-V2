@@ -47,6 +47,7 @@ class UserController extends Controller
             try {
                 Mail::to($request->email)->send(new WelcomeEmail([
                     'name' => $request->name,
+                    'test' => 'TEST'
                 ]));
             } catch (Throwable $th) {
                 Log::debug('Error while sending email.');
